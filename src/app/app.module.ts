@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormComponent } from './Pages/Reactive-Form/Components/reactive-form/reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormBuilderComponent } from './Pages/Reactive-Form/Components/reactive-form-builder/reactive-form-builder.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     NavbarComponent,
     ReactiveFormComponent,
+    ReactiveFormBuilderComponent,
   ],
   imports: [
     BrowserModule,
