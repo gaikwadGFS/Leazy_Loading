@@ -1,0 +1,49 @@
+Lifecycle hooks in Angular are methods that Angular calls at specific stages of a component's lifecycle. These hooks give developers the opportunity to tap into key moments in the lifecycle of a component or directive, allowing them to perform custom logic during these stages. Here's a summary of the primary lifecycle hooks in Angular:
+
+1 . ngOnChanges:
+
+Purpose: Called when any data-bound property of a directive changes.
+Use Case: Respond to changes to input properties.
+Signature: ngOnChanges(changes: SimpleChanges): void
+
+2.ngOnInit:
+
+Purpose: Called once, after the first ngOnChanges.
+Use Case: Initialize the directive or component after Angular first displays the data-bound properties and sets the directive or component's input properties.
+Signature: ngOnInit(): void
+
+3.ngDoCheck:
+
+Purpose: Called during every change detection run, immediately after ngOnChanges and ngOnInit.
+Use Case: Detect and act upon changes that Angular cannot or will not detect on its own.
+Signature: ngDoCheck(): void
+
+4.ngAfterContentInit:
+
+Purpose: Called once after the first ngDoCheck.
+Use Case: Respond after Angular projects external content into the component's view.
+Signature: ngAfterContentInit(): void
+
+5.ngAfterContentChecked:
+
+Purpose: Called after ngAfterContentInit and every subsequent ngDoCheck.
+Use Case: Respond after Angular checks the content projected into the component.
+Signature: ngAfterContentChecked(): void
+
+6.ngAfterViewInit:
+
+Purpose: Called once after the first ngAfterContentChecked.
+Use Case: Respond after Angular initializes the component's views and child views.
+Signature: ngAfterViewInit(): void
+
+7.ngAfterViewChecked:
+
+Purpose: Called after the ngAfterViewInit and every subsequent ngAfterContentChecked.
+Use Case: Respond after Angular checks the component's views and child views.
+Signature: ngAfterViewChecked(): void
+
+8.ngOnDestroy:
+
+Purpose: Called immediately before Angular destroys the directive or component.
+Use Case: Cleanup just before Angular destroys the directive or component, such as unsubscribing from Observables and detaching event handlers.
+Signature: ngOnDestroy(): void

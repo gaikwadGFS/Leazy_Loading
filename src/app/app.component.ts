@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'employee';
 
-  
+  constructor(){
+    console.log("App Component called")
+  }
 }
