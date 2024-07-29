@@ -22,6 +22,10 @@ const routes: Routes = [
       {
         path:'lib',
         loadChildren:()=> import('./Pages/library/library.module').then((y=>y.LibraryModule))
+      },
+      {
+        path: 'Reactvie',
+        loadChildren: () => import('./Pages/Reactive-Form/Module/reactive-form-module/reactive-form-module.module').then((r => r.ReactiveFormModuleModule))
       }
     ]
   }
