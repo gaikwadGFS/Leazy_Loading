@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ContentChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-demo',
@@ -7,10 +7,12 @@ import { Component } from '@angular/core';
 })
 export class DemoComponent {
 
-  inputValue:string=''
+  inputValue:string='';
+
+ 
 
   constructor(){
-    console.log("Demo Componet called");
+    console.log("Demo Parent Componet called");
   }
   save(txt:HTMLInputElement){
    this.inputValue=txt.value;
