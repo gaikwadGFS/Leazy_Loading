@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="col-12">
-            <app-ng-onchanges [msg]="inputValue">
+            <app-ng-onchanges [msg]="inputValue" *ngIf="!toDestroy">
                 <p #para>This is the Projected Content -{{inputValue}} </p>
                 <!-- <p #para>This is the Projected Content 2</p> -->
                 <!-- <p #para>This is the Projected Content 3</p> -->
@@ -16,5 +16,6 @@
             </app-ng-onchanges>
 
         </div>
+        <button type="button" class="btn btn-info" (click)="destroy()">Show / Hide</button>
     </div>
 </div>

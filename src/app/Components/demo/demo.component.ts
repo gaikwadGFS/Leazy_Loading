@@ -1,14 +1,15 @@
-import { AfterViewInit, Component, ContentChild, ElementRef } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ContentChild, ElementRef, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',
   styleUrl: './demo.component.css'
 })
-export class DemoComponent implements AfterViewInit {
+export class DemoComponent implements AfterViewInit ,AfterViewChecked {
 
   inputValue:string='';
 
+  toDestroy:boolean=false;
  
 
   constructor(){
@@ -16,12 +17,25 @@ export class DemoComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log("ngAfterViewInit Hooks called");
+    console.log("Parent ngAfterViewInit Hooks called");
     
   }
+
+  ngAfterViewChecked(): void {
+    console.log("Parent ngAfterViewChecked Hooks called");
+    
+  }
+
+
+
+  destroy(){
+   this.toDestroy = !this.toDestroy;
+  }
+
   save(txt:HTMLInputElement){
    this.inputValue=txt.value;
   }
+
   
 
 }

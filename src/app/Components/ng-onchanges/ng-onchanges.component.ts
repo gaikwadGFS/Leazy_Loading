@@ -1,6 +1,6 @@
-import { AfterContentChecked, AfterContentInit, AfterViewInit, Component,
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component,
     ContentChild,  ContentChildren,  DoCheck,  ElementRef,  
-    Input, OnChanges, OnInit, QueryList, SimpleChanges, ViewChild } from '@angular/core';
+    Input, OnChanges, OnDestroy, OnInit, QueryList, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-ng-onchanges',
@@ -9,7 +9,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewInit, Component,
 })
 export class NgOnchangesComponent implements OnChanges,OnInit,DoCheck,
                                             AfterContentInit,AfterContentChecked,
-                                            AfterViewInit {
+                                            AfterViewInit,AfterViewChecked,OnDestroy {
 
   @Input() msg:string='';
 
@@ -33,23 +33,30 @@ export class NgOnchangesComponent implements OnChanges,OnInit,DoCheck,
   }
 
   ngDoCheck(): void {
-    console.log("ngDoCheck Hooks called");
+    // console.log("ngDoCheck Hooks called");
     // console.log("do check:" , this.paraRef);
   }
   ngAfterContentInit(): void {
-    console.log("ngAfterContentInit Hooks called");
-    console.log(":After content Init" , this.paraRef.nativeElement);
+    // console.log("ngAfterContentInit Hooks called");
+    // console.log(":After content Init" , this.paraRef.nativeElement);
     // console.log(this.paraMultiRef);
   }
 
   ngAfterContentChecked(): void {
-    console.log("ngAfterContentChecked Hooks called");
+    // console.log("ngAfterContentChecked Hooks called");
   }
 
   ngAfterViewInit(): void {
-    console.log("ngAfterViewInit Hooks called");
-    console.log("In ngAfterViewInit" ,this.tempRef.nativeElement)
+    // console.log("ngAfterViewInit Hooks called");
+    // console.log("In ngAfterViewInit" ,this.tempRef.nativeElement)
   }
- 
+ ngAfterViewChecked(): void {
+  // console.log("ngAfterViewChecked Hooks called");
+   
+ }
+ ngOnDestroy(): void {
+    console.log("ngOnDestroy Hooks called");
+ }
+
 }
 
