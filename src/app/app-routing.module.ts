@@ -26,6 +26,10 @@ const routes: Routes = [
       {
         path: 'Reactvie',
         loadChildren: () => import('./Pages/Reactive-Form/Module/reactive-form-module/reactive-form-module.module').then((r => r.ReactiveFormModuleModule))
+      },
+      {
+        path: 'JSON',
+        loadChildren: () => import('./Pages/JSON-CRUD/Modules/json/json.module').then((js => js.JsonModule))
       }
     ]
   }

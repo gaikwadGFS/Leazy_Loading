@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormComponent } from './Pages/Reactive-Form/Components/reactive-form/reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormBuilderComponent } from './Pages/Reactive-Form/Components/reactive-form-builder/reactive-form-builder.component';
+import { JsonCrudComponent } from './Pages/JSON-CRUD/components/json-crud/json-crud.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,11 +17,13 @@ import { ReactiveFormBuilderComponent } from './Pages/Reactive-Form/Components/r
     NavbarComponent,
     ReactiveFormComponent,
     ReactiveFormBuilderComponent,
+    JsonCrudComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
