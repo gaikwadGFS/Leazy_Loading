@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <div class="card shadow p-4">
+                <input type="text" name="msg" #inputText class="form-control" (focus)="0">
+                <button type="button" class="btn btn-success my-3" (click)="save(inputText)">Sumbit</button>
+               
+            </div>
+        </div>
+        <div class="col-12">
+            <app-ng-onchanges [msg]="inputValue" *ngIf="!toDestroy">
+                <p #para>This is the Projected Content -{{inputValue}} </p>
+                <!-- <p #para>This is the Projected Content 2</p> -->
+                <!-- <p #para>This is the Projected Content 3</p> -->
+
+            </app-ng-onchanges>
+
+        </div>
+        <button type="button" class="btn btn-info" (click)="destroy()">Show / Hide</button>
+    </div>
+</div>
